@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="author" content="John Baker">
+		<meta name="description" content="">
+		<style>
+			#con{
+				height:100vh;
+				display:flex;
+				flex-direction:column;
+				justify-content:space-around;
+				align-items:center;
+				
+				
+				
+			}
+			
+			.box{
+				flex:0 1 100px;
+				width:101px;
+				min-height:100px;
+			
+			}
+			
+			#one{
+				background-color: khaki;
+			}
+			
+			#two{
+				background-color:tomato;
+			}
+			
+			#three{
+				background-color:coral;
+			}
+			
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="con">
+			<div class="box" id="one" ></div>
+			<div class="box" id="two" ></div>
+			<div class="box" id="three"></div>
+		</div>
+			<audio id="dance">
+				<source src="Dance.mp3" type="audio/mpeg"> 
+			</audio>
+		
+		<script>
+			/*
+[ ] set up loop to run every 500 milliseconds
+[ ] grab all boxes
+[ ] loop through boxes
+[ ] generate random width value for each box and apply
+[ ] add sound file to page and play on page load
+*/
+var boxes =	document.getElementsByClassName("box");
+
+var dance_sounds=document.getElementById("dance");
+document.onload=start();
+
+	function Loop(){
+		console.log("looping");
+		
+		for(var i=0; i< boxes.length; i++){
+		
+			
+			var random = Math.floor((Math.random()*100)+1);
+			
+			var box= boxes[i];
+			
+			box.style.width=random +"%";
+			
+		}
+			
+	}
+	
+	
+	
+	function start(){
+		setInterval(Loop,85);
+		dance.play();
+	}
+	
+	
+			
+		</script>
+	
+	</body>
+	
+	
+	
+
+	
+<html>		
